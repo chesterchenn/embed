@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Basic</title>
+    <style>
+      .rect {
+        width: 120px;
+        height: 80px;
+        background: #1ba784;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect"></div>
+    <script>
+      let elem = document.querySelector('.rect');
+      let rect = elem.getBoundingClientRect();
+      for (const key in rect) {
+        if (typeof rect[key] !== 'function') {
+          let para = document.createElement('p');
+          para.textContent = `${key} : ${rect[key]}`;
+          document.body.appendChild(para);
+        }
+      }
+    </script>
+  </body>
+</html>
